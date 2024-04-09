@@ -1,0 +1,274 @@
+/**************************\
+ *  TABLE OF CONTENTS:    *
+ *    - CORE SETUP        * 
+ *    - GENERAL STYLING   *
+ *    - NAVIGATION BAR    *
+ *    - FORM STYLING      *
+ *    - MISCELLANEOUS     *
+ *    - LARGE SCREENS     *
+\**************************/
+
+/******************\
+ *   CORE SETUP   *
+\******************/
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Geist;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --white: rgb(214, 215, 218);
+  --redish: #b23;
+  --dark: #16161a;
+}
+
+@font-face {
+  font-family: "Geist";
+  src: url(../font/GeistVariableVF.woff2) format("woff2");
+}
+
+/**********************\
+ *  GENERAL STYLINGS  *
+\**********************/
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+  background-color: var(--white);
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 5rem 1rem 1rem 1rem;
+}
+
+
+/********************\
+ *  NAVIGATION BAR  *
+\********************/
+
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  min-height: 12%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--redish);
+  color: var(--white);
+  box-shadow: 0px 0px 10px gray;
+  padding: 1rem;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: var(--white);
+  text-align: center;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  background-color: var(--white);
+  color: var(--redish);
+  border: 2px solid var(--white);
+  border-radius: 3px;
+}
+
+li a:hover {
+  background: inherit;
+  color: var(--white);
+  transition: 0.1s ease-in;
+}
+
+
+/******************\
+ *  FORM STYLING  *
+\******************/
+
+form {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+form .input-boxs {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+form .input-boxs textarea {
+  width: 90%;
+  height: 20vh;
+  border: none;
+  padding: 1rem;
+  background: inherit;
+  color: var(--dark);
+  font-size: 1.5rem;
+}
+
+form .input-boxs textarea:focus {
+  outline: none;
+}
+
+form .input-boxs span {
+  width: 90%;
+  height: 20vh;
+  border: none;
+  padding: 1rem;
+  background: inherit;
+  color: var(--dark);
+  font-size: 1.5rem;
+}
+
+form .select-boxs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+form .select-boxs select {
+  width: 30vw;
+  height: 4em;
+  background-color: inherit;
+  border: var(--redish) solid 2px;
+  border-radius: 5px;
+  color: var(--redish);
+  outline: none;
+  transition: 0.1s ease-in;
+  padding: 0.5rem;
+}
+
+form .select-boxs .switch {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form button {
+  width: 90%;
+  outline: none;
+  padding: 0.8rem 2rem;
+  border: 2px solid var(--redish);
+  border-radius: 3px;
+  font-size: 1rem;
+  background-color: var(--redish);
+}
+
+form button:hover {
+  cursor: pointer;
+  background: inherit;
+  color: var(--redish);
+  transition: 0.1s ease-in;
+}
+
+
+/*******************\
+ *  MISCELLANEOUS  *
+\*******************/
+
+.leading-head {
+  display: none;
+}
+
+footer {
+  color: var(--white);
+}
+
+
+/*******************\
+ *  LARGE SCREENS  *
+\*******************/
+@media screen and (min-width: 1024px) {
+  body {
+    padding: 7rem 6rem 2rem 6rem;
+  }
+
+  form {
+    width: 80%;
+  }
+
+  form .input-boxs {
+    flex-direction: row;
+  }
+
+  form .input-boxs textarea {
+    width: 80%;
+    height: 40vh;
+    border: 2px solid var(--redish);
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
+
+  form .input-boxs textarea:focus {
+    outline: none;
+    border-color: var(--redish);
+  }
+
+  form .input-boxs span {
+    width: 80%;
+    height: 40vh;
+    border: 2px solid var(--redish);
+    border-radius: 10px;
+    font-size: 1.2rem;
+  }
+
+  form .select-boxs select {
+    width: 10vw;
+  }
+
+  form .select-boxs select {
+    cursor: pointer;
+  }
+
+  form button {
+    width: max-content;
+    padding: 0.8rem 2.5rem;
+  }
+}
